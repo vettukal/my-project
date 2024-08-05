@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build-java:
+  build-java-2:
 
     runs-on: ubuntu-latest
     
@@ -27,6 +27,9 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: list files
+      run: ls -al
 
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
