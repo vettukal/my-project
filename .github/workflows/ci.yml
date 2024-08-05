@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build-java:
+  build-java-2:
 
     runs-on: ubuntu-latest
     
@@ -28,11 +28,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v4
-      with:
-        image: nanajanashia/demo-app
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: list files
+      run: ls -al
+
          
